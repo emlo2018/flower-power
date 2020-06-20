@@ -23,7 +23,8 @@ export default function Flowers() {
       <h1>List🌸</h1>  
       {items.map((item) => (
         <ul>
-          <li>{item.common_name}</li>
+          <h1>{item.common_name}</h1>
+          <li><img src={`${item.cover_image}`} alt={item.common_name} /></li>  
         </ul>
       ))
       }
