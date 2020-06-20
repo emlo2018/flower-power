@@ -1,3 +1,4 @@
+import React from 'react'
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
@@ -12,7 +13,7 @@ export default function Home() {
       <section className={utilStyles.headingMd}>
         <p>some text</p>
         <h2>
-        <Link href="/first"><a>to first</a></Link></h2>
+        <Link href="/flowers"><a>to flowers</a></Link></h2>
       </section>
     </Layout>
   )
