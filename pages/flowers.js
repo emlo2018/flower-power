@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Layout from '../components/layout'
 import Link from 'next/link'
+import utilStyles from '../styles/utils.module.css'
 
 export default function Flowers() {
-
   const LISTURL = 'https://flowers-mock-data.firebaseio.com/flowers.json'
-  const SINGLEURL = 'https://flowers-mock-data.firebaseio.com/flowers/4.json' 
+  const TESTURL = 'https://flowers-mock-data.firebaseio.com/flowers/9.json' 
   const [items, setItems] = useState([])
 
   useEffect(() => {
@@ -20,14 +20,25 @@ export default function Flowers() {
         <Head>
         <title>🌸</title>
       </Head>
-      <h1>List🌸</h1>  
+      <section className={utilStyles.centerSection}>
+      <button>Shade loving plants</button>
+      <button>Sun loving plants</button>
+      </section>
       {items.map((item) => (
-        <ul>
-          <h1>{item.common_name}</h1>
-          <li><img src={`${item.cover_image}`} alt={item.common_name} /></li>  
+        <ul key={item._id.oid}>
+          <li className={utilStyles.listItem}>
+          <Link href='/flowers/[flowerid]' as={`/flowers/${item._id}`}>
+
+            <a className={utilStyles.list}>
+              <h2 className={utilStyles.headingTop}>{item.common_name}</h2>
+             <img  className={utilStyles.imgList} src={`${item.cover_image}`} alt={item.common_name} />
+            </a>
+           </Link> 
+          </li>  
         </ul>
       ))
       }
     </Layout>
   )
 }
+

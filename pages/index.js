@@ -11,9 +11,9 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>some text</p>
         <h2>
-        <Link href="/flowers"><a>to flowers</a></Link></h2>
+         <Link href="/flowers"><a>to flowers</a></Link>
+        </h2>     
       </section>
     </Layout>
   )

@@ -24,6 +24,13 @@
     font-size: 1.2rem;
     line-height: 1.5;
   }
+
+  .headingTop {
+    position: absolute;
+    color: #fafafa;
+    font-size: 5vw;
+    z-index: 10;
+  }
   
   .borderCircle {
     border-radius: 9999px;
@@ -38,15 +45,28 @@
   }
   
   .list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: center;
   }
-  
+
   .listItem {
-    margin: 0 0 1.25rem;
+    list-style: none;
   }
   
   .lightText {
     color: #999;
+  }
+
+  .imgList {
+    filter: brightness(80%);
+    z-index: 1;
+  }
+
+  .centerSection {
+    display: flex;
+    justify-content: center;
+    margin: 3em;
   }
