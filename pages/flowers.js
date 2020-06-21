@@ -27,7 +27,7 @@ export default function Flowers() {
       {items.map((item) => (
         <ul key={item._id.oid}>
           <li className={utilStyles.listItem}>
-          <Link href='/flowers/[flowerid]' as={`/flowers/${item._id}`}>
+          <Link href='/flowers/[flowerid]' as={`/flowers/${item._id.oid}`}>
 
             <a className={utilStyles.list}>
               <h2 className={utilStyles.headingTop}>{item.common_name}</h2>
@@ -41,4 +41,3 @@ export default function Flowers() {
     </Layout>
   )
 }
-
