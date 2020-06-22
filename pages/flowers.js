@@ -1,43 +1,58 @@
-import React, { useState, useEffect } from 'react'
-import Head from 'next/head'
-import Layout from '../components/layout'
+import axios from 'axios'
 import Link from 'next/link'
 import utilStyles from '../styles/utils.module.css'
+import Layout from '../components/layout'
 
-export default function Flowers() {
-  const LISTURL = 'https://flowers-mock-data.firebaseio.com/flowers.json'
-  const TESTURL = 'https://flowers-mock-data.firebaseio.com/flowers/9.json' 
-  const [items, setItems] = useState([])
+function Flowers({ error, flowers }) {
+  if (error) return <p>{error.toString()}</p>
+  if (flowers.length === 0) return <p>Loading...</p>
 
-  useEffect(() => {
-    fetch(LISTURL)
-      .then((res) => res.json())
-      .then((json) => setItems(json))
-  }, [] )
-  
   return (
     <Layout>
-        <Head>
-        <title>🌸</title>
-      </Head>
-      <section className={utilStyles.centerSection}>
-      <button>Shade loving plants</button>
-      <button>Sun loving plants</button>
+    <section className={utilStyles.centerSection}>
+    
+      <ul>
+        {flowers.map((flower, index) => (
+          <li key={flower.latin_name} className={utilStyles.listItem}>
+            <Link href={`/flowers/id?flower=${index}`}
+                    as={`/flowers/${index}`}
+                    >
+              <a className={utilStyles.list}>
+                <h2 className={utilStyles.headingTop}>{flower.common_name}</h2>
+                <img  className={utilStyles.imgBar} src={`${flower.cover_image}`} alt={flower.common_name} />
+              </a>
+            </Link>
+          </li>
+        ))}
+      </ul>
       </section>
-      {items.map((item) => (
-        <ul key={item._id.oid}>
-          <li className={utilStyles.listItem}>
-          <Link href='/flowers/[flowerid]' as={`/flowers/${item._id.oid}`}>
-
-            <a className={utilStyles.list}>
-              <h2 className={utilStyles.headingTop}>{item.common_name}</h2>
-             <img  className={utilStyles.imgList} src={`${item.cover_image}`} alt={item.common_name} />
-            </a>
-           </Link> 
-          </li>  
-        </ul>
-      ))
-      }
     </Layout>
   )
 }
+
+/* 
+ Use getStaticProps if the requested data won't change and
+ it will be used to construct the page layout during BUILDTIME; 
+ when the project is being built for production (next build), 
+ this will called ONCE and only ONCE. It will NOT be called 
+ again when the project is RUNNING in production (next start).
+*/
+export async function getStaticProps() {
+  let flowers = []
+  let error = ''
+  try {
+    const res = await axios.get('https://flowers-mock-data.firebaseio.com/flowers.json')
+    flowers = res.data
+  } catch (err) {
+    error = err.toString()
+  }
+
+  return {
+    props: {
+      error,
+      flowers,
+    },
+  };
+}
+
+export default Flowers

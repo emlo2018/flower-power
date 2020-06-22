@@ -7,8 +7,8 @@ body {
   line-height: 1.6;
   font-size: 18px;
   color: rgb(17, 17, 17);
-  background-color: #fafafa;
-}
+  background-color: #eeeaea;
+  }
 
 * {
   box-sizing: border-box;
@@ -24,10 +24,9 @@ a:hover {
 }
 
 img {
-  height: 20vw;
-  width: 30vw;
-  object-fit: cover;
-  flex-grow: 1;
+  width: 8em;
+  height: 8em;
 }
+
 
 
