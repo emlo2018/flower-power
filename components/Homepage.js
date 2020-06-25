@@ -34,21 +34,16 @@ export const WelcomeMessage = styled.h1`
   margin: 0 auto;
   margin-bottom: 2rem;
   width: 80%;
-  font-size: 16px;
+  font-size: 24px;
   font-family: 'Roboto', sans-serif;
   color: #fafafafa;
   padding: 2rem;
   letter-spacing: 1px;
-  font-weight: lighter;
+  font-weight: 900;
   position: relative;
-  animation: slidein 3s;
-    @keyframes slidein {
-      from{ left: -700px};
-      to { left: 35px };
-    };
-  @media (min-width: 600px) {
+  @media (min-width: 668px) {
     width: 80%;
-    font-size: 26px;
+    font-size: 40px;
     padding: 3rem;
   }
 `
@@ -94,7 +89,7 @@ export const Homepage = () => {
     <BackgroundImage src='https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60' />
       <Middle>
       <AnimationLottie/>
-      <WelcomeMessage><strong>Welcome!</strong> Start exploring our plants now! 
+      <WelcomeMessage>Flower Power 
       </WelcomeMessage>
       </Middle>
     </div>

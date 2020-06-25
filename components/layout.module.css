@@ -1,19 +1,20 @@
 .container {
   height: 70px;
+  margin-bottom: 2em;
 }
 
 .header {
   height: 70px;
-  background: #fafafa;
+  background: #F2F2F2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navBar {
   color: #1d1c1a;
   font-size: 12px;
   letter-spacing: 2px;
-  margin-right: 3rem;
-  float: right;
-  margin-top: 1.5rem;
 }
 
 .navBar:after {

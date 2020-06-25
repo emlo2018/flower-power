@@ -1,15 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
-export const BigContainer = styled.div`
-margin: auto;
-width: 100%;
-padding: 10px;
-text-align: center;
- @media (min-width: 900px) {
-  width: 60%;
-  }
-`
 export const MovingBackground = keyframes`
 0%{background-position:0% 50%}
 50%{background-position:100% 50%}

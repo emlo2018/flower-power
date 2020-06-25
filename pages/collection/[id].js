@@ -76,16 +76,20 @@ const Detail = (props) => {
     <Layout>
       <main className={styles.main}>
         <div className={styles.cardContainer}>
+          <section className={styles.card}>
+          <p><strong>{props.flower.common_name}</strong>
+            <br></br>Blooming season {props.flower.blooming_season}.
+            <br></br>Notes: {props.flower.notes}.
+            <br></br><i>Latin: </i>{props.flower.latin_name}.
+          </p>
+          </section>
           
-          <div className={styles.card}>
-            <p>The <strong>{props.flower.latin_name}</strong>, known as <strong>{props.flower.common_name}</strong>,  blooms in <strong>{props.flower.blooming_season}</strong>. Notes: <i>{props.flower.notes}</i>.</p>
-          </div>
 
           <div className={styles.imageContainer}>
           {props.flower.cover_image ? (
                           <img className={styles.imageCard} src={props.flower.cover_image} />
                         ) : (
-                          <img className={styles.imageCard} src="/images/profile.jpg" />
+                          <img className={styles.imageCard} src='/images/profile.jpg' />
                         )}
           </div>
         </div>

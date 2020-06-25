@@ -13,14 +13,15 @@ const Index = (props) => {
     <Homepage />
     <ListContainer>
 
-      <ul className={styles.list}>
+    <ul className={styles.list} >
       {props.flowers.map((flower, id) => (
-       <li key={flower.latin_name} className={styles.listItem}>
+      
+       <li key={flower._id.oid} className={styles.listItem}>
                  <Link href={`/collection/[id]`} as={`/collection/${id}`}>
                   <a 
                   className={styles.list}
                   aria-label={`info about ${flower.common_name}`}>
-                 <h2>{flower.common_name}</h2>
+                 <h2 className={styles.HeadingTop}>{flower.common_name}</h2>
                  {flower.cover_image ? (
               <img src={flower.cover_image} className={styles.imgBar}/>
             ) : (
@@ -30,9 +31,9 @@ const Index = (props) => {
               </a>
                 </Link>
           </li>
-         ))}
-      </ul>
-
+          ))}
+       </ul>
+      
     </ListContainer>
     </Layout>
   )

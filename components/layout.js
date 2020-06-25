@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import styles from './layout.module.css'
 import Link from 'next/link'
-import { Footer } from './Footer'
 
 export default function Layout(props) {
   return (
@@ -14,10 +13,9 @@ export default function Layout(props) {
       
       <div className={styles.header}>
        <Link href="/"><a className={styles.navBar} title="home">Home</a></Link>
-       <Link href="/about"><a className={styles.navBar}  title="about">About</a></Link>
       </div>
       {props.children}
-      <Footer />
+     
     </div>
 
   )
