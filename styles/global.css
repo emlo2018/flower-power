@@ -6,27 +6,30 @@ body {
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
-  color: rgb(17, 17, 17);
   background-color: #eeeaea;
-  }
+}
 
 * {
   box-sizing: border-box;
 }
 
 a {
-  color: #ee0aee;
+  color: #000000;
   text-decoration: none;
+  outline: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+@keyframes MovingBackground {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 img {
-  width: 8em;
-  height: 8em;
+  width: 12em;
+  height: 12em;
 }
-
-
-
