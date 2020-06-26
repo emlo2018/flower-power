@@ -14,8 +14,7 @@ export default function Layout(props) {
       <div className={styles.header}>
        <Link href="/"><a className={styles.navBar} title="home">Home</a></Link>
       </div>
-      {props.children}
-     
+      {props.children}   
     </div>
 
   )

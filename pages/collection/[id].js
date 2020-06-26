@@ -13,7 +13,7 @@ const Detail = (props) => {
   
   const [comment, setComment] = useState("")
   const [comments, setComments] = useState([...props.comments].reverse())
-  // HANDLE POST COMMENT
+ 
   const postComment = async (event) => {
     event.preventDefault()
     fetch(URL_ROOT+`comments/emlo2018/${props.id}.json`,
@@ -29,10 +29,9 @@ const Detail = (props) => {
     .then(() => {
       setComments((previousComments) => [comment, ...previousComments])
       setComment("")
-      
       })
       swal({
-        text: "Your comment has successfully been added! ",
+        text: "Your comment was added! ",
         icon: "success",
       })
         .catch((err) => {
@@ -40,7 +39,6 @@ const Detail = (props) => {
     })
   }
 
-  // HANDLE DELETE COMMENT 
   const handleDelete = (comment) => {
     const newArray = [props.comments]
     const toRemove = comment
@@ -61,10 +59,9 @@ const Detail = (props) => {
     )
     .then(() => {
       setComments((previousComments) => [...previousComments])
-      
       })
       swal({
-        text: "Your comment has successfully been removed!",
+        text: "Your comment is removed!",
         icon: "success",
       })
         .catch((err) => {
@@ -83,21 +80,13 @@ const Detail = (props) => {
             <br></br><i>Latin: </i>{props.flower.latin_name}.
           </p>
           </section>
-          
-
+        
           <div className={styles.imageContainer}>
-          {props.flower.cover_image ? (
-                          <img className={styles.imageCard} src={props.flower.cover_image} />
-                        ) : (
-                          <img className={styles.imageCard} src='/images/profile.jpg' />
-                        )}
+          {props.flower.cover_image ? ( <img className={styles.imageCard} src={props.flower.cover_image} />) : ( <img className={styles.imageCard} src='/images/profile.jpg' /> )}
           </div>
         </div>
 
         <div className={styles.formContainer}>
-
-          <h2 className={styles.subtitle}>Leave a comment</h2>
-
           <form
             className={styles.form}
             onSubmit={postComment}>
@@ -106,29 +95,25 @@ const Detail = (props) => {
               id='comment'
               type='text'
               value={comment}
-              placeholder="Type your comment here..."
+              placeholder='Write your comment here...'
               required
               onChange={(event) => setComment(event.target.value)}
             />
-            <button className={styles.button}>Post</button>
+            <button className={styles.button}>Post comment</button>
         </form>
 
           <h2 className={styles.subtitle}>Comments</h2>
           
-        {comments.length > 0 ? (
           <ul className={styles.commentsList}>
             
               {comments.map((comment, id) => (
                 <li key={id} className={styles.commentContainer}>
                   <p className={styles.comment}><i>{comment}</i>{" "}</p>
-                  <p className={styles.moment}>{moment().format("MMM Do YY")}</p>
-                  <button className={styles.deleteButton} onClick={() => handleDelete(comment)}>delete <span role="img">×</span></button>
+                  <p className={styles.moment}>{moment().format("MMM Do YYYY")}</p>
+                  <button className={styles.deleteButton} onClick={() => handleDelete(comment)}>delete</button>
                 </li>
               ))}
-          </ul>
-        ) : (
-          <p className={styles.text}>Be the first to comment</p>
-            )}
+          </ul> 
         </div>
 
       </main>

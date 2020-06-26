@@ -13,11 +13,10 @@ color: #fafafa;
 z-index: 10;
 font-size: 12px;
 left: 2.2em;
-@media (min-width: 668px) and (max-width: 1023px) { 
+@media (min-width: 668px) { 
   margin-top: 4em;
   margin-bottom: 15em;
   padding-bottom: 10em;
- } 
- @media (min-width: 1024px) {
+  font-size: 20px; 
  } 
 `

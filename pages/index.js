@@ -14,25 +14,19 @@ const Index = (props) => {
     <ListContainer>
 
     <ul className={styles.list} >
-      {props.flowers.map((flower, id) => (
+      {props.flowers.map((item, id) => (
       
-       <li key={flower._id.oid} className={styles.listItem}>
-                 <Link href={`/collection/[id]`} as={`/collection/${id}`}>
-                  <a 
-                  className={styles.list}
-                  aria-label={`info about ${flower.common_name}`}>
-                 <h2 className={styles.HeadingTop}>{flower.common_name}</h2>
-                 {flower.cover_image ? (
-              <img src={flower.cover_image} className={styles.imgBar}/>
-            ) : (
-                <img src="/images/profile.jpg" 
-                className={styles.imgBar}/>
-              )}
-              </a>
-                </Link>
-          </li>
-          ))}
-       </ul>
+       <li key={item._id.oid} className={styles.listItem}>
+          <Link href={`/collection/[id]`} as={`/collection/${id}`}>
+          <a className={styles.list} aria-label={`information ${item.common_name}`}>
+          <h2 className={styles.HeadingTop}>{item.common_name}</h2>
+          {item.cover_image ? (
+          <img src={item.cover_image} className={styles.imgBar}/>) : ( <img src='/images/profile.jpg' aria-label='Replacing image' className={styles.imgBar}/> )}
+          </a>
+          </Link>
+        </li>
+       ))}
+   </ul>
       
     </ListContainer>
     </Layout>
