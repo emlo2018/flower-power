@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import { URL_ROOT } from '../../root_url/url_root_api.js'
 import fetch from 'isomorphic-unfetch'
-
 import Layout from '../../components/layout'
 import styles from '../../styles/flower.module.css'
-
 import swal from 'sweetalert'
-import moment from "moment"
+import moment from 'moment'
 
 
 const Detail = (props) => {
@@ -82,7 +80,7 @@ const Detail = (props) => {
           </section>
         
           <div className={styles.imageContainer}>
-          {props.flower.cover_image ? ( <img className={styles.imageCard} src={props.flower.cover_image} />) : ( <img className={styles.imageCard} src='/images/profile.jpg' /> )}
+          {props.flower.cover_image ? ( <img className={styles.imageCard} src={props.flower.cover_image} />) : ( <img className={styles.undefined} src='/images/profile.jpg' /> )}
           </div>
         </div>
 
@@ -102,15 +100,13 @@ const Detail = (props) => {
             <button className={styles.button}>Post comment</button>
         </form>
 
-          <h2 className={styles.subtitle}>Comments</h2>
-          
+          <h2 className={styles.subtitle}>Comments</h2> 
           <ul className={styles.commentsList}>
-            
               {comments.map((comment, id) => (
                 <li key={id} className={styles.commentContainer}>
                   <p className={styles.comment}><i>{comment}</i>{" "}</p>
                   <p className={styles.moment}>{moment().format("MMM Do YYYY")}</p>
-                  <button className={styles.deleteButton} onClick={() => handleDelete(comment)}>delete</button>
+                  <button className={styles.deleteBtn} onClick={() => handleDelete(comment)}>delete</button>
                 </li>
               ))}
           </ul> 

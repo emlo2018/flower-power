@@ -62,11 +62,11 @@
     height: auto;
   }
   
- /* .imageCardUndefined{
-    width: 300px;
+  .undefined{
+    width: auto;
     height: 300px;
     padding: 50px;
-  } */
+  }
 
   .list {
     display: flex;
@@ -214,13 +214,14 @@
     padding: 1rem;
   }
   
-  .deleteButton{
+  .deleteBtn{
     margin-top: 1rem;
-    width: 5rem;
-    height: 2rem;
+    width: 4rem;
+    height: 1.5rem;
     color: #F2F2F2;
     background: #0D0D0D;
-    border: 1px solid #0D0D0D;
+    border-radius: 5px;
+    border: 0.5px solid #0D0D0D;
     text-align: center;
     font-family: "Roboto", sans-serif;
     letter-spacing: 2px;
@@ -230,10 +231,8 @@
     font-size: 9px;
   }
     
-  .deleteButton:hover {
+  .deleteBtn:hover {
     color: #000;
-    background: #81220d;
-    border: 2px solid #701e0c;
     transition: all 0.3s ease-in-out;
   }
 
