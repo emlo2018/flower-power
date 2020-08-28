@@ -1,9 +1,8 @@
 import React from "react"
 import { AnimationLottie } from '../components/AnimationLottie'
-
 import styled from 'styled-components'
 
-// MAIN COMPONENT
+// Home COMPONENT
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -81,7 +80,7 @@ export const Navbar = styled.div`
   }
 `
 
-export const Homepage = () => {
+export const Home = () => {
 
   return (
     <>
@@ -99,4 +98,4 @@ export const Homepage = () => {
   )
 }
 
-export default Homepage
+export default Home
