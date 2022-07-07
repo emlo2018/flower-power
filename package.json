@@ -14,7 +14,7 @@
     "gray-matter": "^4.0.2",
     "isomorphic-unfetch": "^3.0.0",
     "lottie-react-web": "^2.2.2",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "next": "9.3.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
